@@ -1,0 +1,149 @@
+/* Imports */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* Main Containers */
+    :root{
+        font-size: 62.5%;
+        font-family: 'Poppins', sans-serif;
+        --bold: 600;
+        --reg: 400;
+        --thin: 200;
+        --bg: hsl(0, 0%, 98%); 
+        --p: hsl(229, 6%, 66%);
+        --header: hsl(234, 12%, 34%);
+        --super: hsl(180, 62%, 55%);
+        --tb: hsl(0, 78%, 62%);
+        --karma: hsl(34, 97%, 64%);
+        --calc: hsl(212, 86%, 64%);
+    }
+
+    body{
+        min-height:100vh;
+        max-width:100vw;
+        min-width:23rem;
+        background-color: var(--bg);
+        display:flex;
+        flex-direction: column;
+        margin: 7rem clamp(1rem,10vw,3rem);
+        box-sizing:border-box;
+    }
+
+/* Sub-Containers I */
+    header{
+        text-align: center;
+        margin-bottom:6rem;
+    }
+
+    main{
+        display:grid;
+        justify-content: center;
+        gap:2rem;
+        grid-template-columns: minmax(20rem,31rem);
+        grid-template-rows: repeat(4,22rem);
+        grid-template-areas:"super"
+                            "tb"
+                            "karma"
+                            "calc";
+    }
+
+/* Sub-Containers  II */
+    section{
+        position:relative;
+        background-color: white;
+        padding-left:2.5rem;
+        border-top: solid .4rem;
+        border-radius:.5rem;
+        box-shadow: .1rem 1rem 1rem -.2rem hsl(218, 35%, 88%);
+    }
+
+    .supervisor{
+        border-top-color:var(--super);
+        grid-area: super;
+    }
+
+    .teambuilder{
+        border-top-color:var(--tb);
+        grid-area: tb;
+    }
+
+    .karma{
+        border-top-color:var(--karma);
+        grid-area: karma;
+    }
+
+    .calculator{
+        border-top-color:var(--calc);
+        grid-area: calc;
+    }
+
+/* Sub-Containers III */
+    h1{
+        font-size:clamp(1.8rem,6.4vw,3.6rem);
+    }
+
+    h4{
+        font-size:clamp(1.3rem,5.5vw,1.9rem);
+    }
+
+    h1, h4{
+        font-weight: var(--bold);
+        color: var(--header);
+    }
+
+    p{
+        color: var(--p);
+    }
+
+    main p{
+        padding-right:2.8rem;        
+        margin-top:-2rem;
+        line-height:2.3rem;
+        font-size:clamp(1rem,3.5vw,1.3rem);
+    }
+
+    header p{
+        font-size:clamp(1rem,4vw,1.5rem);
+    }
+
+    svg{
+        width: 5.5rem;
+        position:absolute;
+        bottom:2.5rem;
+        right:2.5rem;
+    }
+
+/* Sub-Containers IV*/
+    p br{
+        display:none;
+    }
+
+/* Pseudo-Elements */
+    h1::first-line{
+        font-weight:var(--thin);
+    }
+
+/* Media Queries */
+@media screen and (orientation:landscape), (min-width:560px){
+ /* Main Containers */
+    body{
+        margin:0;
+        padding-top:4rem;
+    }
+
+/* Sub-Containers I */
+    main{
+        grid-template-columns: repeat(3,minmax(17.2rem,33rem));
+        grid-template-rows:repeat(4,11rem);
+        gap: 3rem ;
+        justify-content: center;
+        grid-template-areas:". tb ."
+                            "super tb calc"
+                            "super karma calc"
+                            ". karma .";
+    }
+
+/* Sub-Containers IV*/
+    p br{
+        display:block;
+    }
+}
