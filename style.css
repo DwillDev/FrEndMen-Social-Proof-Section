@@ -1,149 +1,255 @@
 /* Imports */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
 /* Main Containers */
     :root{
         font-size: 62.5%;
-        font-family: 'Poppins', sans-serif;
-        --bold: 600;
+        font-family: 'Spartan', sans-serif;
         --reg: 400;
-        --thin: 200;
-        --bg: hsl(0, 0%, 98%); 
-        --p: hsl(229, 6%, 66%);
-        --header: hsl(234, 12%, 34%);
-        --super: hsl(180, 62%, 55%);
-        --tb: hsl(0, 78%, 62%);
-        --karma: hsl(34, 97%, 64%);
-        --calc: hsl(212, 86%, 64%);
+        --med: 500;
+        --bold: 700;
+        --main-color: hsl(300, 43%, 22%); 
+        --sub-color: hsl(300, 24%, 96%);
+        --verified: hsl(333, 80%, 67%);
+        --p: hsl(303, 10%, 53%);
+        --bg: hsl(0, 0%, 100%);
     }
 
     body{
         min-height:100vh;
         max-width:100vw;
-        min-width:23rem;
+        padding: 5rem 2.5rem;
+        margin:auto;
         background-color: var(--bg);
-        display:flex;
-        flex-direction: column;
-        margin: 7rem clamp(1rem,10vw,3rem);
+        background-image: url("images/bg-pattern-top-mobile.svg") , url("images/bg-pattern-bottom-mobile.svg");
+        background-position: left top , right bottom;
+        background-repeat: no-repeat no-repeat;
+        display:grid;
+        justify-content: center;
+        grid-template-columns: minmax(21.1rem,1fr);
+    }
+
+    *{
         box-sizing:border-box;
     }
 
 /* Sub-Containers I */
-    header{
-        text-align: center;
-        margin-bottom:6rem;
-    }
-
     main{
         display:grid;
-        justify-content: center;
         gap:2rem;
-        grid-template-columns: minmax(20rem,31rem);
-        grid-template-rows: repeat(4,22rem);
-        grid-template-areas:"super"
-                            "tb"
-                            "karma"
-                            "calc";
+        grid-template-areas:"header"
+                            "stars"
+                            "testimonies";
     }
 
-/* Sub-Containers  II */
-    section{
-        position:relative;
-        background-color: white;
-        padding-left:2.5rem;
-        border-top: solid .4rem;
-        border-radius:.5rem;
-        box-shadow: .1rem 1rem 1rem -.2rem hsl(218, 35%, 88%);
+/* Sub-Containers  II */ 
+   header{
+        text-align: center;
+        padding:0 .3rem;
+        grid-area: header;
     }
 
-    .supervisor{
-        border-top-color:var(--super);
-        grid-area: super;
+    .stars{
+        color:var(--main-color);
+        font-weight:var(--bold);
+        font-size:1.25rem;
+        text-align:center;
+        display:grid;
+        gap:1.5rem;
+        margin-bottom:4rem;
+        grid-area: stars;
     }
 
-    .teambuilder{
-        border-top-color:var(--tb);
-        grid-area: tb;
-    }
-
-    .karma{
-        border-top-color:var(--karma);
-        grid-area: karma;
-    }
-
-    .calculator{
-        border-top-color:var(--calc);
-        grid-area: calc;
+    .testimonies{ 
+        display:grid;
+        gap:2rem;
+        grid-area: testimonies;
     }
 
 /* Sub-Containers III */
+    section > div{
+        border-radius:.8rem;
+    }
+
+    .stars > div{
+        background-color: var(--sub-color);
+        display: flex;
+        flex-direction: column;
+        padding:1.5rem;
+    }
+
+    .reviewer{
+        background-color: var(--main-color);
+        padding: 4rem 3.5rem 2rem 3.5rem;
+    }
+
+/* Sub-Containers IV */
     h1{
-        font-size:clamp(1.8rem,6.4vw,3.6rem);
-    }
-
-    h4{
-        font-size:clamp(1.3rem,5.5vw,1.9rem);
-    }
-
-    h1, h4{
-        font-weight: var(--bold);
-        color: var(--header);
-    }
-
-    p{
-        color: var(--p);
-    }
-
-    main p{
-        padding-right:2.8rem;        
-        margin-top:-2rem;
-        line-height:2.3rem;
-        font-size:clamp(1rem,3.5vw,1.3rem);
+        color: var(--main-color);
+        font-size: 3rem;
     }
 
     header p{
-        font-size:clamp(1rem,4vw,1.5rem);
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: var(--p);
     }
 
-    svg{
-        width: 5.5rem;
-        position:absolute;
-        bottom:2.5rem;
-        right:2.5rem;
+    .intro{
+        margin-bottom: 2.5rem;
+        display:grid;
+        align-items: center;
+        font-size:1.2rem;
+        grid-template-columns: 5.6rem 1fr;
+        grid-template-rows:1fr 1fr;
+        grid-template-areas:"icon name"
+                            "icon verified"
     }
 
-/* Sub-Containers IV*/
-    p br{
-        display:none;
+    .comment{
+        text-align:left;
+        line-height:2.2rem;
+        font-size:1.25rem;
+        color:var(--sub-color);
+    }
+
+    .fivestars{
+        margin:auto;
+        width:11rem;
+        padding-bottom:1.1rem;
+        display:flex;
+        justify-content: space-between;
+    }
+
+/* Sub-Containers V */   
+    .icon{    
+        border-radius:50%;
+        width:4rem;
+        grid-area: icon;
+    }  
+
+    .name{
+        color:var(--bg);
+        font-weight: var(--bold);
+        grid-area: name;
+    }
+
+    .verified{
+        color:var(--verified);
+        grid-area: verified;
     }
 
 /* Pseudo-Elements */
-    h1::first-line{
-        font-weight:var(--thin);
-    }
 
 /* Media Queries */
-@media screen and (orientation:landscape), (min-width:560px){
- /* Main Containers */
+@media screen and (orientation:landscape){
+/* Main Containers */
     body{
-        margin:0;
-        padding-top:4rem;
+        background: url("images/bg-pattern-top-desktop.svg") left top no-repeat, url("images/bg-pattern-bottom-desktop.svg") right bottom no-repeat;
+        padding: 10rem 14rem;
     }
 
 /* Sub-Containers I */
     main{
-        grid-template-columns: repeat(3,minmax(17.2rem,33rem));
-        grid-template-rows:repeat(4,11rem);
-        gap: 3rem ;
-        justify-content: center;
-        grid-template-areas:". tb ."
-                            "super tb calc"
-                            "super karma calc"
-                            ". karma .";
+        grid-template-columns: 1fr 1fr;
+        gap:0 3.8rem;
+        grid-template-areas:"header stars"
+                            "testimonies testimonies";
     }
 
-/* Sub-Containers IV*/
-    p br{
-        display:block;
+
+/* Sub-Containers  II */
+    header{
+        text-align: left;
+        padding:0 12rem 0 0;
     }
+
+    header p{
+        margin-top:-2rem;
+    }
+    
+    .stars{
+        margin:0;
+        padding-top:4rem;
+        grid-template-rows: repeat(3,5rem);
+        grid-template-columns: repeat(4,2rem);
+        grid-template-areas:"reviews reviews . ."
+                            ". rg rg ."
+                            ". . bt bt"
+
+    }
+
+    .testimonies{
+        justify-content: center;
+        grid-template-columns: repeat(3,38rem);
+        grid-template-rows: repeat(3,2rem);
+        gap:0;
+        grid-template-areas:"colton . ."
+                            ". irene ."
+                            ". . anne";
+
+
+    }
+
+/* Sub-Containers III */
+    .stars > div{
+        margin:auto;
+        flex-direction: row;
+        align-items: center;
+        width:45rem;
+    }
+
+    .testimonies > div{
+        width: 35rem;
+        height:25rem;
+    }
+
+    .reviews{
+        grid-area:reviews;
+    }
+
+    .report{
+        grid-area:rg;
+    }
+
+    .besttech{
+        grid-area:bt;
+    }
+
+    .colton{
+        grid-area: colton;
+    }
+
+    .irene{
+        grid-area: irene;
+    }
+
+    .anne{
+        grid-area: anne;
+    }
+
+/* Sub-Containers IV */
+    h1{
+        color: var(--main-color);
+        font-size: 4.5rem;
+    }
+
+    header p{
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: var(--p);
+    }
+
+    .comment{
+    }
+
+    .fivestars{
+        padding:0;
+    }
+
+/* Sub-Containers V */
+
+/* Pseudo-Elements */
+
 }
+
