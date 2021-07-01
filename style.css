@@ -17,7 +17,7 @@
         min-height: 100vh;
         background-color: white;
         background: url("images/bg-pattern-top-mobile.svg") left top no-repeat , url("images/bg-pattern-bottom-mobile.svg") right bottom no-repeat;
-        padding: 6.5vh 7vw;
+        padding: 6.5vh 5vw;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -64,7 +64,7 @@
 /* Sub-Containers III */
     h1{
         color: var(--mainc);
-        font-size: clamp(1.5rem,8vw,4.8rem);
+        font-size: clamp(1.5rem,8.4vw,4.8rem);
     }
 
     header p{
@@ -126,7 +126,7 @@
 
     .review p{
         color: var(--secondc);
-        font-size: clamp(1rem,3.5vw,1.27rem);
+        font-size: clamp(1rem,3.1vw,1.26rem);
         line-height: 2rem;
         grid-area: comment;
     }
