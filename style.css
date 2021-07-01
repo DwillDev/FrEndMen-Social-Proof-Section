@@ -1,0 +1,246 @@
+/* Imports */
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+/* Main Containers */
+    :root{
+        font-size: 62.5%;
+        font-family: 'Spartan', sans-serif;
+        --reg: 400;
+        --med: 500;
+        --bold: 700;
+        --mainc: hsl(300, 43%, 22%); 
+        --secondc: hsl(300, 24%, 96%);
+        --h6: hsl(333, 80%, 67%);
+        --headerp: hsl(303, 10%, 53%);
+    }
+
+    body{
+        min-height: 100vh;
+        background-color: white;
+        background: url("images/bg-pattern-top-mobile.svg") left top no-repeat , url("images/bg-pattern-bottom-mobile.svg") right bottom no-repeat;
+        padding: 6.5vh 7vw;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: minmax(20rem,130rem);
+    }
+
+    *{
+        box-sizing:border-box;
+    }
+
+/* Sub-Containers I */
+    main{
+        display:grid;
+        grid-template-columns: minmax(16rem,1fr);
+        grid-template-areas:"header"
+                            "fivestars"
+                            "testimony"; 
+    }
+
+/* Sub-Containers  II */
+    header{
+        text-align: center;
+        margin-bottom:2.5rem;
+        grid-area: header;
+    }
+
+    .fivestars{
+        text-align: center;
+        margin-bottom:5rem;
+        display:flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        justify-content: center;
+        grid-area: fivestars;   
+    }
+
+    .testimony{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        grid-area: testimony;
+    }
+
+/* Sub-Containers III */
+    h1{
+        color: var(--mainc);
+        font-size: clamp(1.5rem,8vw,4.8rem);
+    }
+
+    header p{
+        color: var(--headerp);
+        font-size: clamp(1rem,3.8vw,1.5rem);
+        line-height: 2.2rem;
+    }
+
+    section > div{
+        border-radius: .8rem;
+    }
+
+    .fivestars > div{
+        background-color: var(--secondc);
+        padding-top: 1.5rem;
+        margin:auto;
+        width:100%;
+        height:7rem;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .review{
+        background-color:var(--mainc);
+        padding: 4rem 3rem 2rem 3.5rem;
+        display: grid;
+        grid-template-columns: 6rem;
+        grid-template-rows: 5.5rem;
+        grid-template-areas:"icon buyer"
+                            "comment comment";
+    }
+
+/* Sub-Containers IV */
+    .stars{
+        width: 13rem;
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fivestars p{
+        font-size: clamp(1rem,3.5vw,1.4rem);
+        color: var(--mainc);
+        font-weight: var(--bold);
+    }
+
+    img{
+        border-radius: 50%;
+        width: 4rem;
+        grid-area: icon;
+    }
+
+    .buyer{
+        grid-area: buyer;
+    }
+
+    .review p{
+        color: var(--secondc);
+        font-size: clamp(1rem,3.5vw,1.27rem);
+        line-height: 2rem;
+        grid-area: comment;
+    }
+
+/* Sub-Containers V */
+    .star{
+        background:url("images/icon-star.svg") no-repeat;
+        height:1.6rem;
+        width:1.6rem;
+    } 
+
+    h5{
+        color: var(--secondc);
+        font-size:clamp(1rem,3.1vw,1.35rem);
+        font-weight: var(--bold);
+        margin:.5rem 0;
+    }
+
+    h6{
+        color: var(--h6);
+        font-size:clamp(1rem,3.1vw,1.35rem);
+        font-weight:var(--reg);
+        margin:0;
+    }
+
+/* Media Queries */
+@media screen and (orientation:landscape){
+/* Main Containers */
+    body{
+        background: url("images/bg-pattern-top-desktop.svg") left top no-repeat , url("images/bg-pattern-bottom-desktop.svg") right bottom no-repeat;
+        background-size: auto 38% , 90% 85%;
+        padding: 5.5vh 10vw;
+    }
+
+/* Sub-Containers I */
+    main{
+        grid-template-columns: repeat(2,minmax(45rem,130rem));
+        grid-template-rows: repeat(2, 50%);
+        grid-template-areas:"header fivestars"
+                            "testimony testimony";
+    }
+
+/* Sub-Containers  II */
+    main > *{
+        margin: 0;
+    }
+
+    header{
+        text-align: left;
+        padding-right: 9rem;
+    }
+
+    .fivestars{
+        margin-left:9rem;
+        text-align: left;
+        row-gap: .1rem;
+    }
+
+    .testimony{
+        padding-top: 5rem;
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+
+/* Sub-Containers III */
+    h1{
+        margin:0 0 -.5rem 0;
+    }
+
+    header p{
+        line-height:2.5rem;
+    }
+
+    .fivestars > div{
+        flex-direction: row;
+        justify-content: flex-start;
+        padding:0 4rem;
+        height:5.8rem;
+    }
+
+    .reviews{
+        transform: translateX(-8rem);
+    }
+
+    .rg{
+        transform: translateX(-4rem);
+    }
+
+    .review{
+        height: 26rem;
+        width:clamp(44rem, 25vw, 100%);
+        padding-right: 4.2rem;
+    }
+
+    .ir{
+        transform: translateY(1.7rem);
+    }
+
+    .aw{
+        transform: translateY(3.5rem);
+    }
+
+/* Sub-Containers IV */
+    .stars{
+        margin-right:4rem;
+    }
+
+    .review p{
+        line-height:2.3rem;
+    }
+
+/* Sub-Containers V */
+
+/* Pseudo-Elements */
+
+}
+
