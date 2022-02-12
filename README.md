@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Pages](https://naiwilliams.github.io/Social-Proof-Section/)
+- Solution URL: [Github Pages](https://naiwilliams.github.io/FrEndMen-Social-Proof-Section/)
 
 ## My process
 
